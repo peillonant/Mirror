@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Character
+  - Mirror
+  - Wall
+  - EndDoor
+  - Door
+  - Key
+  - Torch
   layers:
   - Default
   - TransparentFX
@@ -12,8 +19,8 @@ TagManager:
   - Water
   - UI
   - 
-  - 
-  - 
+  - Floor
+  - Wall
   - 
   - 
   - 
