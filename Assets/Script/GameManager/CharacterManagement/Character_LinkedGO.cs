@@ -28,8 +28,8 @@ public class Character_LinkedGO : MonoBehaviour
 	GameObject go_MirrorGrid_previous;             					// Variable that allow to keep the Grid from the previous level to be sure to unsubscribs everything when passing on the next level
     GameObject go_Probes_Key;                      					// Variable to retrieve the component Props_Key of the GameObject child of Props/Key
 	GameObject go_Probes_Key_previous;								// Variable that allow to keep the Key GameObject from the previous level to be sure to unsubscribs everything when passing on the next level
-	[SerializeField] GameObject go_Probes_Torch;					// Variable that retrieve the component Props_Torch of the GameObject child of Props/Torch
-	[SerializeField] GameObject go_Probes_Torch_previous;			// Variable that allow to keep the Torch GameObject from the previous level to be sure to unsubscribs everything when passing on the next level
+	GameObject go_Probes_Torch;					// Variable that retrieve the component Props_Torch of the GameObject child of Props/Torch
+	GameObject go_Probes_Torch_previous;			// Variable that allow to keep the Torch GameObject from the previous level to be sure to unsubscribs everything when passing on the next level
 	// END VARIABLE CREATION
 
     //ENCAPSULATION

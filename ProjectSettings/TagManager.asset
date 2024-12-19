@@ -11,6 +11,8 @@ TagManager:
   - Door
   - Key
   - Torch
+  - Light
+  - Enemy
   layers:
   - Default
   - TransparentFX

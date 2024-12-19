@@ -24,7 +24,7 @@ public class LevelManager_Character : MonoBehaviour
 
     void ResetPosition()
     {
-        go_Character.GetComponent<CharacterMovement>().UpdateCanMove();
+        GameManager.Instance.SetCanMove();
 
         go_Character.transform.position = transform.GetChild(LevelManager.Instance.GetCurrentLevel()+1).GetComponent<LevelProperty>().GetSpawnPosition().transform.position;
 
@@ -55,6 +55,6 @@ public class LevelManager_Character : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
 
-        go_Character.GetComponent<CharacterMovement>().UpdateCanMove();
+        GameManager.Instance.SetCanMove();
     }
 }

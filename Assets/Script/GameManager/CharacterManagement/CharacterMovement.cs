@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 /// <summary>
@@ -9,23 +5,23 @@ using UnityEngine;
 /// </summary>
 public class CharacterMovement : MonoBehaviour
 {
+	// VARIABLE CREATION
 	[HideInInspector] public Vector3 v3_MoveDirection = Vector3.zero;				//The direction the player should move
 	
-	[SerializeField] private float f_CharactLookAtY;
+	private float f_CharactLookAtY;
 
 	float f_Speed = 8f;                                                     		//The speed that the player moves (Above 10 on speed, the character can pass through walls)
     float f_TurnSmoothTime = 0.1f;													//Variable to smooth the movement of the rotation
 	float f_TurnSmoothVelocity;
 	float f_DownwardVelocity;
-
-	public bool canMove = true;															//Can the player move?
+	// END VARIABLE CREATION
 
 
 	//Move with physics so the movement code goes in FixedUpdate()
 	void FixedUpdate ()
 	{
 		//If the player cannot move, leave
-		if (!canMove)
+		if (!GameManager.Instance.CanMove())
 			return;
 
 		// Condition to manage the Gravity to add later 
@@ -75,9 +71,6 @@ public class CharacterMovement : MonoBehaviour
 	/// <summary>
 	/// Function to update the capacity to move or not of the character
 	/// </summary>
-	public void UpdateCanMove()
-	{
-		canMove = !canMove;
-	}
+	
 
 }

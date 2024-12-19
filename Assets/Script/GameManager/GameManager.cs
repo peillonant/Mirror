@@ -21,7 +21,15 @@ public class GameManager : MonoBehaviour
 
 	// END OF INSTANCIATION
 
-	
+	// VARIABLE CREATION
+	bool canMove = true;															//Can the player move?
+
+	// END VARIABLE CREATION
+
+	// ENCAPSULATION
+	public void SetCanMove() => canMove = !canMove;
+	public bool CanMove() => canMove;
+	// END ENCAPSULATION
 
 
 }

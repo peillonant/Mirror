@@ -10,8 +10,11 @@ public class Probs_PressurePlate_Lvl2 : Props_PressurePlateBase
         // Avoid to check the collider when an enemy enter in the Sphere Collider
         if (other.gameObject.CompareTag("Character"))
         {
+            // Activate the GameObject linked to the Bar
             go_Impacted[0].SetActive(true);
             
+            // Deactivate all Light of the Room
+            go_Impacted[1].SetActive(false);
         }
     }
 }

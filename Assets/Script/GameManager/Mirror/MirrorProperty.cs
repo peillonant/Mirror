@@ -7,26 +7,24 @@ public class MirrorProperty : MonoBehaviour
     [SerializeField] bool b_isActivated;
     [SerializeField] bool b_isEnlightened;
     [SerializeField] private List <Material> m_materials;                               // List of Material changed when the Mirror is activated or not
-    [SerializeField] MirrorActivation_Capsule mirrorActivation_Capsule;                 // Variable to retrieve the component CapsuleCollider of the GameObject child of the Mirror
+    MirrorActivation_Capsule mirrorActivation_Capsule;                 // Variable to retrieve the component CapsuleCollider of the GameObject child of the Mirror
     // END VARIABLE CREATION
 
     // ENCAPSULATION
     public bool GetIsActive() => b_isActivated;
+    public bool GetIsEnlightened() => b_isEnlightened;
+    public void SetIsEnlightened(bool b_newIsEnlightened) => b_isEnlightened = b_newIsEnlightened; 
     // END ENCAPSULATION
-
-
-    // Function to initalize the component when is added on the scene automatically
-    void Reset()
-    {
-        // Retrieve the Script MirrorActivation_Capsule from the child of the Mirror "CapsuleCollider"
-        mirrorActivation_Capsule = transform.GetChild(0).GetComponent<MirrorActivation_Capsule>();
-    }
 
     // Manage the subscription of Event at the start of the Scene
     void Start()
     {
+        // Retrieve the Script MirrorActivation_Capsule from the child of the Mirror "CapsuleCollider"
+        mirrorActivation_Capsule = transform.GetChild(0).GetComponent<MirrorActivation_Capsule>();
+
         // Subscribes to the IsActivated event
         mirrorActivation_Capsule.IsActivated += ActivationMirror;
+        
     }
 
     // Update the bool isActivated of the Mirror.

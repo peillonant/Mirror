@@ -2,12 +2,14 @@ using UnityEngine;
 
 public class MirrorActivation_Capsule : MonoBehaviour
 {
+    // EVENT & DELEGATE
     public delegate void ActivationTriggered();
     public event ActivationTriggered IsActivated;
+    // END EVENT & DELEGATE
 
-    [SerializeField] CapsuleCollider capsuleCollider;
+    CapsuleCollider capsuleCollider;
 
-    void Reset()
+    void Start()
     {
         capsuleCollider = GetComponent<CapsuleCollider>();
     }
@@ -19,7 +21,7 @@ public class MirrorActivation_Capsule : MonoBehaviour
         if (other.gameObject.CompareTag("Character"))
         {
             // Now, we are checking if the Mirror is deactivate to avoid useless call && if the Mirror "see" the Character
-            if (!this.transform.parent.GetComponent<MirrorProperty>().GetIsActive() && CheckVisibility(other))
+            if (!transform.parent.GetComponent<MirrorProperty>().GetIsActive() && CheckEnlightened(other) && UniversalMethod.Instance.CheckColliderRayCast(gameObject, other, "Character"))
             {
                 // Trigger the event IsActivated that will trigger the bool on the MirrorProperty script.     
                 IsActivated?.Invoke();
@@ -29,33 +31,26 @@ public class MirrorActivation_Capsule : MonoBehaviour
             else
                 return;
         }
-        
-        else
-            return;
     }
 
-    // Methode to check if the character is seen by the Mirror or not
-    bool CheckVisibility(Collider other)
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="other"></param>
+    /// <returns></returns>
+    bool CheckEnlightened(Collider other)
     {
-        // Raycast Direction from the Mirror to the Character
-        Vector3 v3_direction = other.transform.position - transform.position;
-
-        // Create the raycast from the mirror in the direction of the character
-        if (Physics.Raycast(transform.position, v3_direction, out RaycastHit hit))
-        {
-            // Vérifier si l'objet touché est bien l'objet cible
-            if (hit.collider.gameObject.CompareTag("Character"))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+        if (transform.parent.GetComponent<MirrorProperty>().GetIsEnlightened())
+            return true;
         else
-            return false;
+        {
+            if (!other.gameObject.transform.GetChild(0).gameObject.activeSelf)
+                return false;
+            else
+                return other.gameObject.transform.GetChild(0).GetComponent<TorchManager>().IsMirrorLighUp();
+        }
     }
+
 
     // When the Mirror has been activated, we deactivate the component to stop checking every frame
     void DisableCollider()

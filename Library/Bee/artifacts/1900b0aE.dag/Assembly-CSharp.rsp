@@ -359,13 +359,14 @@
 -analyzer:"D:/Program Files/Unity/Hub/Editor/2022.3.17f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Script/CameraManager/CameraManager.cs"
 "Assets/Script/CameraManager/WallProperty.cs"
-"Assets/Script/GameManager/CharacterManagement/CharacterInput.cs"
 "Assets/Script/GameManager/CharacterManagement/CharacterInventory.cs"
 "Assets/Script/GameManager/CharacterManagement/CharacterMovement.cs"
 "Assets/Script/GameManager/CharacterManagement/CharacterTeleport.cs"
-"Assets/Script/GameManager/CharacterManagement/CharacterUI_Interact.cs"
 "Assets/Script/GameManager/CharacterManagement/Character_LinkedGO.cs"
 "Assets/Script/GameManager/CharacterManagement/Character_SubscriptionEvent.cs"
+"Assets/Script/GameManager/CharacterManagement/InputManager/CharacterInput_Interaction.cs"
+"Assets/Script/GameManager/CharacterManagement/InputManager/CharacterInput_Movement.cs"
+"Assets/Script/GameManager/CharacterManagement/UI_Character/CharacterUI_Interact.cs"
 "Assets/Script/GameManager/Door/DoorActivation_Box.cs"
 "Assets/Script/GameManager/Door/DoorManager.cs"
 "Assets/Script/GameManager/Door/DoorProperty.cs"
@@ -380,7 +381,10 @@
 "Assets/Script/GameManager/Props/PressurePlate/Probs_PressurePlate_Lvl2.cs"
 "Assets/Script/GameManager/Props/PressurePlate/Props_PressurePlateBase.cs"
 "Assets/Script/GameManager/Props/Props_Key.cs"
-"Assets/Script/GameManager/Props/Props_Torch.cs"
+"Assets/Script/GameManager/Props/Torch/Props_Torch.cs"
+"Assets/Script/GameManager/Props/Torch/TorchManager.cs"
+"Assets/Script/GameManager/Props/Torch/Torch_Collider.cs"
+"Assets/Script/GameManager/UniversalMethod.cs"
 -langversion:9.0
 
 /deterministic

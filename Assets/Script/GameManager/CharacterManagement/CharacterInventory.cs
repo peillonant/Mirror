@@ -115,7 +115,10 @@ public class CharacterInventory : MonoBehaviour
         itemAddedInventory_Torch?.Invoke(go_ProbesClosed);
 
         // Trigger the function to deactivate the key from the scene
-        go_ProbesClosed.GetComponent<Props_Torch>().DeactivateTorch(); 
+        go_ProbesClosed.GetComponent<Props_Torch>().DeactivateTorch_Pobs(); 
+
+        // Activate the GameObject Torch linked to the Character
+        transform.GetChild(0).gameObject.SetActive(true);
 
     }
 
