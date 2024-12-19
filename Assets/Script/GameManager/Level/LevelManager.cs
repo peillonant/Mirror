@@ -26,7 +26,7 @@ public class LevelManager : MonoBehaviour
 	// END OF VARIABLE
 
    // ENCAPSULATION
-   public int GetCurrentLevel() {return i_CurrentLevel;}
+   public int GetCurrentLevel() => i_CurrentLevel;
    // END ENCAPSULATION
 
    /// <summary>

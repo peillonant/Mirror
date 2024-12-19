@@ -72,6 +72,7 @@
     <Compile Include="Assets\Script\CameraManager\WallProperty.cs" />
     <Compile Include="Assets\Script\GameManager\Mirror\MirrorActivation_Capsule.cs" />
     <Compile Include="Assets\Script\GameManager\Level\LevelProperty.cs" />
+    <Compile Include="Assets\Script\GameManager\Props\Key\Props_Key.cs" />
     <Compile Include="Assets\Script\GameManager\Props\PressurePlate\Probs_PressurePlate_Lvl2.cs" />
     <Compile Include="Assets\Script\GameManager\Mirror\MirrorActivation_Box.cs" />
     <Compile Include="Assets\Script\GameManager\Mirror\Mirror_Grid.cs" />
@@ -79,9 +80,9 @@
     <Compile Include="Assets\Script\GameManager\CharacterManagement\Character_LinkedGO.cs" />
     <Compile Include="Assets\Script\GameManager\Level\LevelManager.cs" />
     <Compile Include="Assets\Script\GameManager\CharacterManagement\CharacterInventory.cs" />
-    <Compile Include="Assets\Script\GameManager\Props\Props_Key.cs" />
     <Compile Include="Assets\Script\GameManager\CharacterManagement\CharacterTeleport.cs" />
     <Compile Include="Assets\Script\GameManager\UniversalMethod.cs" />
+    <Compile Include="Assets\Script\GameManager\Level\LevelManager_Initiation.cs" />
     <Compile Include="Assets\Script\GameManager\CharacterManagement\UI_Character\CharacterUI_Interact.cs" />
     <Compile Include="Assets\Script\GameManager\Props\Torch\Torch_Collider.cs" />
     <Compile Include="Assets\Script\GameManager\CharacterManagement\InputManager\CharacterInput_Movement.cs" />

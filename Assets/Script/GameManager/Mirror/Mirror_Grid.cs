@@ -90,14 +90,9 @@ public class Mirror_Grid : MonoBehaviour
         go_MirrorFacingCharacter = go_CurrentMirror;
 
         // If the activation is true, We display the UI that inform the user with button to press
-        if (b_isActivated)
-        {
-            b_GridTriggarable = true;
-        }
-        else    // Else, we stop displaying the UI
-        {
-            b_GridTriggarable = false;
-        }
+        // Else, we stop displaying the UI
+        b_GridTriggarable = b_isActivated;
+
         gridActivation?.Invoke(b_GridTriggarable);
     }
 
