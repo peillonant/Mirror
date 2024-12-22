@@ -8,15 +8,10 @@ using UnityEngine;
 /// </summary>
 public class WallProperty : MonoBehaviour
 {
+    // VARIABLE CREATION
     [SerializeField] GameObject go_MainCamera;
     [SerializeField] GameObject go_Character;
-
-    void Reset()
-    {
-        go_MainCamera = GameObject.Find("Main Camera");
-
-        go_Character = GameObject.FindGameObjectWithTag("Character");
-    }
+    // END VARIABLE CREATION
 
     // Update is called once per frame
     void Update()

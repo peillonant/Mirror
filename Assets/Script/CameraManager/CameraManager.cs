@@ -2,11 +2,12 @@ using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
+    // VARIABLE CREATION
     [SerializeField] private GameObject go_Character;
     Vector3 v3_offset = new Vector3 (0f, 8f, -25f);	                            //The offset of the camera from the player (how far back and above the player the camera should be)
-
+    // END VARIABLE CREATION
     
-    public void SetCharacterFollowing(GameObject go_NewCharacter) { go_Character = go_NewCharacter; }
+    public void SetCharacterFollowing(GameObject go_NewCharacter) => go_Character = go_NewCharacter;
 
     void FixedUpdate()
     {
@@ -16,7 +17,6 @@ public class CameraManager : MonoBehaviour
         //If there is a pause menu and the player presses the Cancel input axis, pause the game
 		// if (pauseMenu != null && Input.GetButtonDown("Cancel"))
 		// 	pauseMenu.Pause();
-
 
         FollowingCharact();
     }

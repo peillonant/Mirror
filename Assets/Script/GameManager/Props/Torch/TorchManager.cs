@@ -18,7 +18,11 @@ public class TorchManager : MonoBehaviour
 
     void Start()
     {
+        // Subscription to the event regarding the Mirror lighted up by the torch
         transform.GetChild(0).GetComponent<Torch_Collider>().mirrorLightUp += MirrorIsLightUp;
+
+        // Subscription to the event from the CharacterInput when activate the torch
+        transform.parent.GetComponent<CharacterInput_Interaction>().useTorch += UseTorch;
     }
 
 

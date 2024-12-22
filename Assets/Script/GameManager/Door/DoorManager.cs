@@ -15,12 +15,16 @@ public class DoorManager : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         //Add the subscription to the CharacterInventory when a Key has been added
         go_CharacterInventory.itemAddedInventory_Key += CheckToOpenDoor;
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="go_KeyToCheck"></param>
     void CheckToOpenDoor(GameObject go_KeyToCheck)
     {
         for (int i = 0; i < transform.childCount; i++)
@@ -34,14 +38,14 @@ public class DoorManager : MonoBehaviour
         }
     }
 
-
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="go_DoorToCheck"></param>
+    /// <param name="go_KeyInInventory"></param>
+    /// <returns></returns>
     bool KeyLinkedToDoor(GameObject go_DoorToCheck, GameObject go_KeyInInventory)
     {   
-        if (go_DoorToCheck.GetComponent<DoorProperty>().GetKeyToOpen().Equals(go_KeyInInventory))
-        {
-            return true;
-        }
-        else
-            return false;
+        return go_DoorToCheck.GetComponent<DoorProperty>().GetKeyToOpen().Equals(go_KeyInInventory);
     }
 }

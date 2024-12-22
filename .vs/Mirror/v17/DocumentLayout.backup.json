@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\poino\\Documents\\GitHub\\Mirror\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{ED65AC91-D8B4-BBEB-FA4C-70CF392AACDF}|Assembly-CSharp.csproj|c:\\users\\poino\\documents\\github\\mirror\\assets\\script\\gamemanager\\level\\room\\roomproperty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED65AC91-D8B4-BBEB-FA4C-70CF392AACDF}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\gamemanager\\level\\room\\roomproperty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED65AC91-D8B4-BBEB-FA4C-70CF392AACDF}|Assembly-CSharp.csproj|c:\\users\\poino\\documents\\github\\mirror\\assets\\script\\gamemanager\\level\\property\\levelproperty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED65AC91-D8B4-BBEB-FA4C-70CF392AACDF}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\gamemanager\\level\\property\\levelproperty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RoomProperty.cs",
+              "DocumentMoniker": "C:\\Users\\poino\\Documents\\GitHub\\Mirror\\Assets\\Script\\GameManager\\Level\\Room\\RoomProperty.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\GameManager\\Level\\Room\\RoomProperty.cs",
+              "ToolTip": "C:\\Users\\poino\\Documents\\GitHub\\Mirror\\Assets\\Script\\GameManager\\Level\\Room\\RoomProperty.cs",
+              "RelativeToolTip": "Assets\\Script\\GameManager\\Level\\Room\\RoomProperty.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-21T01:27:44.143Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LevelProperty.cs",
+              "DocumentMoniker": "C:\\Users\\poino\\Documents\\GitHub\\Mirror\\Assets\\Script\\GameManager\\Level\\Property\\LevelProperty.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\GameManager\\Level\\Property\\LevelProperty.cs",
+              "ToolTip": "C:\\Users\\poino\\Documents\\GitHub\\Mirror\\Assets\\Script\\GameManager\\Level\\Property\\LevelProperty.cs",
+              "RelativeToolTip": "Assets\\Script\\GameManager\\Level\\Property\\LevelProperty.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-21T01:24:15.566Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

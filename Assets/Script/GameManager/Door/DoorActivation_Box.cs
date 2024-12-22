@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class DoorActivation_Box : MonoBehaviour
 {
-    public delegate void PassingThroughEndDoor();
     public delegate void PassingThroughDoor();
     public event PassingThroughDoor PassingThroughDoorAble;
-    public event PassingThroughEndDoor PassingThroughEndDoorAble;
+    public event PassingThroughDoor PassingThroughEndDoorAble;
 
     // Check when the character enter on the collider of the Box to trigger the check if the Character can use the functionnality of Passing through Mirror
     void OnTriggerEnter(Collider other)

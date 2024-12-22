@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class UniversalMethod : MonoBehaviour
 {
@@ -30,14 +31,25 @@ public class UniversalMethod : MonoBehaviour
         if (Physics.Raycast(go_Origin.transform.position, v3_direction, out RaycastHit hit))
         {
             // Vérifier si l'objet touché est bien l'objet cible
-            if (hit.collider.gameObject.CompareTag(s_TagName))
-                return true;         
-            
-            else
-                return false;
-
+            return hit.collider.gameObject.CompareTag(s_TagName);         
         }
         else
             return false;
+    }
+
+    /// <summary>
+    /// Methode to update the layer of the GameObject received
+    /// </summary>
+    /// <param name="go_ObjectToUpdate">GameObject to be updated</param>
+    /// <param name="i_Layer">Integer that represent the new layer</param>
+    public void UpdateLayer(GameObject go_ObjectToUpdate, int i_Layer)
+    {
+        go_ObjectToUpdate.layer = i_Layer;
+
+        // Appliquer le layer à tous les enfants du GameObject
+        foreach (Transform child in go_ObjectToUpdate.transform)
+        {
+            UpdateLayer(child.gameObject, i_Layer);
+        }
     }
 }
