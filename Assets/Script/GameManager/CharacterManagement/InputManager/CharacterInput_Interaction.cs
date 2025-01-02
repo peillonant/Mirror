@@ -56,7 +56,7 @@ public class CharacterInput_Interaction : MonoBehaviour
 	}
 
 	/// <summary>
-	/// 
+	/// Function to activate or not the Torch by pressing the button "X" of the Xbox controller
 	/// </summary>
 	void HandleUseTorch()
 	{	

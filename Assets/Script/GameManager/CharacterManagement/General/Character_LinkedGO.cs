@@ -43,7 +43,7 @@ public class Character_LinkedGO : MonoBehaviour
 	//END ENCAPSULATION
 
 	/// <summary>
-	/// 
+	/// Method to add the GameObject that contain all Mirror to help other script to catch easily the mirror from the current level
 	/// </summary>
 	/// <param name="go_newMirrorGrid"></param>
 	public void SetGameObjectMirrorGrid (GameObject go_newMirrorGrid)
@@ -53,7 +53,7 @@ public class Character_LinkedGO : MonoBehaviour
 	}
 
 	/// <summary>
-	/// 
+	/// Method to add the GameObject that contain all keys to help other script to catch easily the mirror from the current level
 	/// </summary>
 	/// <param name="go_newProbesKey"></param>
     public void SetGameObjectProbesKey(GameObject go_newProbesKey)
@@ -63,7 +63,8 @@ public class Character_LinkedGO : MonoBehaviour
 	}
 
 	/// <summary>
-	/// 
+	/// Method to add the GameObject that contain the Torch to help other script to catch easily the mirror from the current level
+	/// [WARNING] To modify due to the fact that after the level 2 we are not loosing the torch anymore [WARNING]
 	/// </summary>
 	/// <param name="go_newProbesTorch"></param>
 	public void SetGameObjectProbesTorch(GameObject go_newProbesTorch)

@@ -58,13 +58,13 @@ public class LevelManager_Character : MonoBehaviour
     }
 
     /// <summary>
-    /// 
+    /// TO CHECK TO OPTIMIZE LATER ?
     /// </summary>
     /// <param name="go_ItemToCheck"></param>
     /// <returns></returns>
     bool CheckItemFromInventoryIsKey(GameObject go_ItemToCheck)
     {
-        return go_ItemToCheck.tag.Equals("Key");
+        return go_ItemToCheck.tag.Equals("Opener") || go_ItemToCheck.tag.Equals("Switch");
         
     }
 

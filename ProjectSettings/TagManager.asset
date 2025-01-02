@@ -13,6 +13,8 @@ TagManager:
   - Torch
   - Light
   - Enemy
+  - Opener
+  - Switch
   layers:
   - Default
   - TransparentFX
@@ -25,7 +27,7 @@ TagManager:
   - Wall
   - 
   - HiddenFloor
-  - 
+  - HiddenWall
   - 
   - 
   - 

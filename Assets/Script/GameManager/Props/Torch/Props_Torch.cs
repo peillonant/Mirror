@@ -11,7 +11,7 @@ public class Props_Torch : MonoBehaviour
     public event RetrieveTorch TorchCanNotBeRetrieve;
     // END EVENT & DELEGATE
 
-    // Check the collider of the Sphere to trigger that the character is close enough to the Key
+    // Check the collider of the Sphere to trigger that the character is close enough to the Torch
     void OnTriggerEnter(Collider other)
     {
         // Avoid to check the collider when an enemy enter in the Sphere Collider
@@ -37,7 +37,7 @@ public class Props_Torch : MonoBehaviour
             return;
     }
 
-    // Function to deactivate the Key when added on the Inventory
+    // Function to deactivate the Torch when added on the Inventory
     public void DeactivateTorch_Pobs()
     {
         gameObject.SetActive(false);

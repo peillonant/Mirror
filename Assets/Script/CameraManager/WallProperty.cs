@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -32,20 +30,22 @@ public class WallProperty : MonoBehaviour
         // Create the raycast from the mirror in the direction of the character
         if (Physics.Raycast(go_MainCamera.transform.position, v3_direction, out RaycastHit hit))
         {
+
             if (hit.collider == gameObject.GetComponent<Collider>())
             {
-                if (gameObject.GetComponent<MeshRenderer>().enabled)
+                if (!gameObject.layer.Equals(10) || !gameObject.layer.Equals(11))
                 {
-                    gameObject.GetComponent<MeshRenderer>().enabled = false;
+                    UniversalMethod.Instance.UpdateLayer(gameObject, 11);
                 }
             }
             else
             {
-                if (!gameObject.GetComponent<MeshRenderer>().enabled)
+                if (gameObject.layer.Equals(11))
                 {
-                    gameObject.GetComponent<MeshRenderer>().enabled = true;
+                    UniversalMethod.Instance.UpdateLayer(gameObject, 0);
                 }
             }
+        
         }
     }
 }

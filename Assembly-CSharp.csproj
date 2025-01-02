@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Script\GameManager\Level\Manager\LevelManager_Character.cs" />
+    <Compile Include="Assets\Script\GameManager\Props\Key\Props_Key_Switch.cs" />
     <Compile Include="Assets\Script\GameManager\Mirror\Grid\Mirror_Grid.cs" />
     <Compile Include="Assets\Script\GameManager\CharacterManagement\Movement\CharacterTeleport.cs" />
     <Compile Include="Assets\Script\GameManager\Level\Manager\LevelManager_Initiation.cs" />
@@ -70,25 +71,27 @@
     <Compile Include="Assets\Script\GameManager\Mirror\Property\MirrorProperty.cs" />
     <Compile Include="Assets\Script\CameraManager\CameraManager.cs" />
     <Compile Include="Assets\Script\CameraManager\WallProperty.cs" />
-    <Compile Include="Assets\Script\GameManager\Props\Key\Props_Switch.cs" />
+    <Compile Include="Assets\Script\GameManager\Level\Door\DoorProperty.cs" />
+    <Compile Include="Assets\Script\GameManager\Level\Door\DoorActivation_Box.cs" />
     <Compile Include="Assets\Script\GameManager\Props\Key\Props_Key.cs" />
     <Compile Include="Assets\Script\GameManager\Props\PressurePlate\Probs_PressurePlate_Lvl2.cs" />
     <Compile Include="Assets\Script\GameManager\CharacterManagement\General\Character_LinkedGO.cs" />
-    <Compile Include="Assets\Script\GameManager\Door\DoorManager.cs" />
     <Compile Include="Assets\Script\GameManager\CharacterManagement\General\Character_SubscriptionEvent.cs" />
+    <Compile Include="Assets\Script\GameManager\Props\Key\Props_Key_Opener.cs" />
     <Compile Include="Assets\Script\GameManager\Level\Property\LevelProperty.cs" />
+    <Compile Include="Assets\Script\GameManager\Level\Door\DoorProperty_EndDoor.cs" />
     <Compile Include="Assets\Script\GameManager\Level\Room\RoomProperty.cs" />
     <Compile Include="Assets\Script\GameManager\CharacterManagement\Movement\CharacterMovement.cs" />
     <Compile Include="Assets\Script\GameManager\Mirror\Activation\MirrorActivation_Box.cs" />
     <Compile Include="Assets\Script\GameManager\Mirror\Activation\MirrorActivation_Capsule.cs" />
     <Compile Include="Assets\Script\GameManager\UniversalMethod.cs" />
+    <Compile Include="Assets\Script\GameManager\Level\Door\DoorManager.cs" />
     <Compile Include="Assets\Script\GameManager\CharacterManagement\UI_Character\CharacterUI_Interact.cs" />
     <Compile Include="Assets\Script\GameManager\Props\Torch\Torch_Collider.cs" />
     <Compile Include="Assets\Script\GameManager\Level\Room\RoomManager.cs" />
     <Compile Include="Assets\Script\GameManager\CharacterManagement\InputManager\CharacterInput_Movement.cs" />
-    <Compile Include="Assets\Script\GameManager\Door\DoorActivation_Box.cs" />
     <Compile Include="Assets\Script\GameManager\GameManager.cs" />
-    <Compile Include="Assets\Script\GameManager\Door\DoorProperty.cs" />
+    <Compile Include="Assets\Script\GameManager\Level\Door\DoorProperty_Sliding.cs" />
     <Compile Include="Assets\Script\GameManager\Props\PressurePlate\Props_PressurePlateBase.cs" />
     <Compile Include="Assets\Script\GameManager\CharacterManagement\Inventory\CharacterInventory.cs" />
     <Compile Include="Assets\Script\GameManager\Props\Torch\TorchManager.cs" />

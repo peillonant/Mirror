@@ -30,7 +30,7 @@ public class RoomManager : MonoBehaviour
     /// </summary>
     void UpdateOnDisplay(GameObject go_LinkedToTheRoom, bool b_ToHide)
     {
-        if (!b_ToHide)
+        if (!b_ToHide && !go_LinkedToTheRoom.layer.Equals(11))
         {
             UniversalMethod.Instance.UpdateLayer(go_LinkedToTheRoom, 0);
             go_LinkedToTheRoom.GetComponent<RoomProperty>().UpdateOnDisplay_LinkedObject(0);

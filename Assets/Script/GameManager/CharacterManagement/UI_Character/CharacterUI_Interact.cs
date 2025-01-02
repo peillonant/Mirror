@@ -17,48 +17,34 @@ public class CharacterUI_Interact : MonoBehaviour
     /// <param name="b_GridAvailable">Boolean to see if we have to activate the Display or Deactivate it</param>
     public void UI_GridInteraction(bool b_GridAvailable)
     {
-        if (!b_GridAvailable)
-        {
-            DeactivateUIDisplay();
-        }
-        else
+        if (b_GridAvailable)
         {
             UpdateUIDisplay_Interact();
-            ActivateUIDisplay();
         }
+
+        ActivateUIDisplay(b_GridAvailable);
     }
 
     /// <summary>
-    /// 
+    /// Display above the Character, we are launching regarding the item near the character the correct word to use the Interact Button
     /// </summary>
     /// <param name="b_KeyAvailable"></param>
-    public void UI_ItemInteraction(bool b_ItemAvailable)
+    public void UI_ItemInteraction(bool b_ItemAvailable, GameObject go_ProbesClosed)
     {
-        if (!b_ItemAvailable)
+        if (b_ItemAvailable)
         {
-            DeactivateUIDisplay();
+            UpdateUIDisplay_Retrieve(go_ProbesClosed);
         }
-        else
-        {
-            UpdateUIDisplay_Retrieve();
-            ActivateUIDisplay();
-        }
+
+        ActivateUIDisplay(b_ItemAvailable);
     }
 
     /// <summary>
     /// Function to Activate the display regarding the button to interact with above the character
     /// </summary>
-    void ActivateUIDisplay()
+    void ActivateUIDisplay(bool b_ToActivate)
     {
-        transform.GetChild(1).gameObject.SetActive(true);
-    }
-
-    /// <summary>
-    /// Function to Deactivate the display regarding the button to interact with above the character
-    /// </summary>
-    void DeactivateUIDisplay()
-    {
-        transform.GetChild(1).gameObject.SetActive(false);
+        transform.GetChild(1).gameObject.SetActive(b_ToActivate);
     }
 
     /// <summary>
@@ -77,10 +63,18 @@ public class CharacterUI_Interact : MonoBehaviour
     /// <summary>
     /// 
     /// </summary>
-    void UpdateUIDisplay_Retrieve()
+    void UpdateUIDisplay_Retrieve(GameObject go_ProbesClosed)
     {
-        if(!CheckUIDisplayText("Recuperer"))
-            UpdateUIText("Recuperer");
+        if (go_ProbesClosed.tag.Equals("Opener"))
+        {
+            if(!CheckUIDisplayText("Recuperer"))
+                UpdateUIText("Recuperer");
+        }
+        else if (go_ProbesClosed.tag.Equals("Switch"))
+        {
+            if(!CheckUIDisplayText("Interargir"))
+                UpdateUIText("Interargir");
+        }
         
         if(!CheckUIDisplayIcone("Button_A"))
             UpdateUIIcone("Button_A");

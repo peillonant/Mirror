@@ -5,9 +5,25 @@ using UnityEngine.AI;
 
 public class CharacterInventory : MonoBehaviour
 {
+    // INSTANCIATION
+    public static CharacterInventory Instance;				//can access it from anywhere without needing to find a reference to it
+    
+   	void Awake()
+	{
+		//This is a common approach to handling a class with a reference to itself.
+		//If instance variable doesn't exist, assign this object to it
+		if (Instance == null)
+			Instance = this;
+		//Otherwise, if the instance variable does exist, but it isn't this object, destroy this object.
+		//This is useful so that we cannot have more than one GameManager object in a scene at a time.
+		else if (Instance != this)
+			Destroy(this);
+	}
+	// END OF INSTANCIATION
+
     // DELEGATE & EVENT
     public delegate void ItemAddedInventory(GameObject go_ItemAdded);
-    public delegate void ItemToBeAdded(bool b_ItemCanBeGrab);
+    public delegate void ItemToBeAdded(bool b_ItemCanBeGrab, GameObject go_ItemToBeAdded);
     
     public event ItemAddedInventory itemAddedInventory_Key;
     public event ItemAddedInventory itemAddedInventory_Torch;
@@ -25,6 +41,8 @@ public class CharacterInventory : MonoBehaviour
     public bool CanGrabItem() => b_CanGrabItem;
     public bool HasTorch() => b_HasTorch;
     public List<GameObject> GetInventoryObjects() => go_InventoryObjects;
+    public void AddInventoryObject(GameObject go_ObjAdded) => go_InventoryObjects.Add(go_ObjAdded);
+    public void RemoveInventoryObject(GameObject go_ObjRemove) => go_InventoryObjects.Remove(go_ObjRemove);
     // End Encapsulation
 
 
@@ -49,7 +67,7 @@ public class CharacterInventory : MonoBehaviour
 
         go_ProbesClosed = go_Probs;
         
-        itemToBeAdded?.Invoke(b_CanGrabItem);
+        itemToBeAdded?.Invoke(b_CanGrabItem, go_ProbesClosed);
     }
 
     /// <summary>
@@ -63,7 +81,7 @@ public class CharacterInventory : MonoBehaviour
         if (go_ProbesClosed == go_Probs)
             go_ProbesClosed = null;
         
-        itemToBeAdded?.Invoke(b_CanGrabItem);
+        itemToBeAdded?.Invoke(b_CanGrabItem, go_ProbesClosed);
     }
 
     /// <summary>
@@ -71,7 +89,7 @@ public class CharacterInventory : MonoBehaviour
     /// </summary>
     public void RetrieveItem()
     {
-        if (go_ProbesClosed.tag.Equals("Key"))
+        if (go_ProbesClosed.tag.Equals("Opener") || go_ProbesClosed.tag.Equals("Switch"))
         {
             RetrieveKey();
         }
@@ -79,16 +97,12 @@ public class CharacterInventory : MonoBehaviour
         {
             RetrieveTorch();
         }
-        else if (go_ProbesClosed.tag.Equals("Switch"))
-        {
-            ActiveSwitch();
-        }
         else
             return;
 
         // Trigger the Event regarding the UI Display to retrive the key
         b_CanGrabItem = false;
-        itemToBeAdded?.Invoke(b_CanGrabItem);
+        itemToBeAdded?.Invoke(b_CanGrabItem, go_ProbesClosed);
 
         // Remove the key from the variable closer to the charact
         go_ProbesClosed = null;  
@@ -100,14 +114,11 @@ public class CharacterInventory : MonoBehaviour
     /// </summary>
     void RetrieveKey()
     {
-        // Add the key to the Inventory
-        go_InventoryObjects.Add(go_ProbesClosed);
-
         // Trigger the Event regarding the Key added on the Inventory
         itemAddedInventory_Key?.Invoke(go_ProbesClosed);
 
         // Trigger the function to deactivate the key from the scene
-        go_ProbesClosed.GetComponent<Props_Key>().DeactivateKey();    
+        go_ProbesClosed.GetComponent<Props_Key>().PropsKeyUsed();    
     }
 
     /// <summary>
@@ -127,15 +138,6 @@ public class CharacterInventory : MonoBehaviour
         transform.GetChild(0).gameObject.SetActive(true);
 
     }
-
-    /// <summary>
-    /// 
-    /// </summary>
-    void ActiveSwitch()
-    {
-
-    }
-
 
     /// <summary>
     /// Function to remove the Item from the list
